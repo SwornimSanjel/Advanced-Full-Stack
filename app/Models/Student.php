@@ -17,7 +17,7 @@ class Student extends Model
     function age(): Attribute
     {
         return Attribute::make(
-            fn() => $this->date_of_birth->age
+            fn() => $this->date_of_birth->age   
         );
     }
 }
