@@ -2,7 +2,21 @@
     <a href="/">
         Student Course App
     </a>
-    <a href="/students">
-        Students
-    </a>
+
+    <div>
+        @guest
+            <a href="/register">Register</a>
+            <a href="/login">Login</a>
+        @endguest
+
+        @auth
+            <a href="/courses">Courses</a>
+            <a href="/students">Students</a>
+
+            <form method="POST" action="/logout" style="display:inline;">
+                @csrf
+                <button type="submit">Log Out</button>
+            </form>
+        @endauth
+    </div>
 </nav>
